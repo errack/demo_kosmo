@@ -17,8 +17,8 @@ class EchoServer(TCPServer):
             client_socket.sendall(data)  # Enviar eco del mensaje recibido
 
             # Responder al cliente con el mensaje recibido o cualquier otra respuesta
-            response = f"\nServidor ha recibido: {message}"
-            client_socket.sendall(response.upper().encode('utf-8'))  # Enviar respuesta
+            response = f"\nServidor ha recibido: {message}".upper()
+            client_socket.sendall(response.encode('utf-8'))  # Enviar respuesta
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Servidor TCP configurable.")
